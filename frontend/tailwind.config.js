@@ -8,50 +8,40 @@ export default {
     extend: {
       colors: {
         brand: {
-          50: '#f0fdf9',
-          100: '#ccfbef',
-          200: '#99f6df',
-          300: '#5eead4',
-          400: '#2dd4bf',
-          500: '#14b8a6',
-          600: '#0d9488',
-          700: '#0f766e',
-          800: '#115e59',
-          900: '#134e4a',
-          950: '#042f2e',
+          50: '#f5f3ff',
+          100: '#ede9fe',
+          200: '#ddd6fe',
+          300: '#c4b5fd',
+          400: '#a78bfa',
+          500: '#8b5cf6',
+          600: '#7c3aed', // Primary vibrant purple matching MonkeyLinks image
+          700: '#6d28d9',
+          800: '#5b21b6',
+          900: '#4c1d95',
+          950: '#2e1065',
         },
-        canine: {
-          400: '#fbbf24',
-          500: '#f59e0b',
-          600: '#d97706',
-          glow: 'rgba(245, 158, 11, 0.25)',
-        },
-        feline: {
-          400: '#c084fc',
-          500: '#a855f7',
-          600: '#9333ea',
-          glow: 'rgba(168, 85, 247, 0.25)',
+        themeDark: {
+          950: '#080518',
+          900: '#0c0722', // Main deep dark purple-black hero bg
+          850: '#110b30',
+          800: '#160e3d', // Card background in dark sections
+          750: '#1d134f',
+          700: '#251963',
         },
       },
       fontFamily: {
         sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
       },
+      boxShadow: {
+        'purple-glow': '0 0 40px -5px rgba(124, 58, 237, 0.45)',
+        'purple-card': '0 20px 40px -15px rgba(12, 7, 34, 0.6), 0 0 0 1px rgba(124, 58, 237, 0.25)',
+      },
       animation: {
-        'scan': 'scan 2.2s ease-in-out infinite alternate',
-        'pulse-glow': 'pulseGlow 2.5s infinite',
-        'float-slow': 'float 4s ease-in-out infinite',
-        'float-delayed': 'float 4s ease-in-out 2s infinite',
+        'float-slow': 'float 5s ease-in-out infinite',
+        'pulse-subtle': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'shimmer': 'shimmer 2.5s linear infinite',
       },
       keyframes: {
-        scan: {
-          '0%': { transform: 'translateY(0%)', opacity: '0.9' },
-          '100%': { transform: 'translateY(100%)', opacity: '0.4' },
-        },
-        pulseGlow: {
-          '0%, 100%': { opacity: '0.6', transform: 'scale(1)' },
-          '50%': { opacity: '1', transform: 'scale(1.03)' },
-        },
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-8px)' },
@@ -60,11 +50,6 @@ export default {
           '0%': { backgroundPosition: '-200% 0' },
           '100%': { backgroundPosition: '200% 0' },
         },
-      },
-      boxShadow: {
-        'neon-canine': '0 0 35px -5px rgba(245, 158, 11, 0.35)',
-        'neon-feline': '0 0 35px -5px rgba(168, 85, 247, 0.35)',
-        'neon-teal': '0 0 35px -5px rgba(20, 184, 166, 0.35)',
       },
     },
   },

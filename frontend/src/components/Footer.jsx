@@ -1,114 +1,90 @@
 import React from 'react';
-import { Sparkles, Shield, Heart } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Sparkles, Shield, Heart, Cat, Dog, BookOpen, ExternalLink } from 'lucide-react';
 
-export default function Footer({ onScrollToUpload }) {
-  const handleScroll = (id) => {
-    const el = document.querySelector(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
+export default function Footer() {
   return (
-    <footer className="bg-slate-950 border-t border-slate-900 text-slate-400 text-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 pb-12 border-b border-slate-900">
+    <footer className="bg-themeDark-950 text-slate-400 border-t border-purple-900/30 text-sm">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-purple-900/20">
           {/* Brand Info */}
           <div className="md:col-span-5 space-y-4">
-            <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-brand-500 to-primary-500 p-0.5 flex items-center justify-center">
-                <div className="w-full h-full bg-slate-950 rounded-[6px] flex items-center justify-center">
+            <Link to="/" className="flex items-center space-x-3">
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 to-purple-600 p-0.5 flex items-center justify-center">
+                <div className="w-full h-full bg-themeDark-950 rounded-[10px] flex items-center justify-center">
                   <Sparkles className="w-4 h-4 text-brand-400" />
                 </div>
               </div>
-              <span className="font-extrabold text-lg text-white">
-                PetVision <span className="text-brand-400">AI</span>
+              <span className="font-black text-xl text-white">
+                PetVision<span className="text-brand-500">.ai</span>
               </span>
-            </div>
-            <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
-              Discover Your Pet's Breed with AI. Built with Google Gemini Multimodal Intelligence to
-              deliver fast, accurate dog and cat breed insights and care guides.
+            </Link>
+            <p className="text-xs text-purple-200/70 leading-relaxed max-w-sm">
+              Next-generation canine & feline breed identification platform powered by Google Gemini
+              Multimodal Vision. Detailed breed profiles, ancestry breakdown, care tips, and purebred standards.
             </p>
-            <div className="flex items-center gap-2 text-xs text-slate-500">
-              <Shield className="w-3.5 h-3.5 text-brand-400" />
-              <span>Zero-Storage Privacy Architecture</span>
+            <div className="flex items-center gap-2 text-xs text-purple-300/80 pt-1">
+              <Shield className="w-3.5 h-3.5 text-emerald-400" />
+              <span>100% In-Memory RAM Processing • No Permanent Storage</span>
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Dedicated Scanners Navigation */}
           <div className="md:col-span-3 space-y-3">
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-200">Navigation</h4>
+            <h4 className="text-xs font-bold uppercase tracking-wider text-purple-300">Scanners & Tools</h4>
             <ul className="space-y-2 text-xs">
               <li>
-                <button
-                  type="button"
-                  onClick={() => handleScroll('#home')}
-                  className="hover:text-brand-400 transition"
-                >
-                  Home
-                </button>
+                <Link to="/cat-scanner" className="flex items-center gap-1.5 hover:text-white transition text-purple-200/80">
+                  <Cat className="w-3.5 h-3.5 text-purple-400" />
+                  <span>Cat Breed Scanner</span>
+                </Link>
               </li>
               <li>
-                <button
-                  type="button"
-                  onClick={() => handleScroll('#how-it-works')}
-                  className="hover:text-brand-400 transition"
-                >
-                  How It Works
-                </button>
+                <Link to="/dog-scanner" className="flex items-center gap-1.5 hover:text-white transition text-purple-200/80">
+                  <Dog className="w-3.5 h-3.5 text-amber-400" />
+                  <span>Dog Breed Scanner</span>
+                </Link>
               </li>
               <li>
-                <button
-                  type="button"
-                  onClick={() => handleScroll('#features')}
-                  className="hover:text-brand-400 transition"
-                >
-                  Features
-                </button>
+                <Link to="/breeds" className="flex items-center gap-1.5 hover:text-white transition text-purple-200/80">
+                  <BookOpen className="w-3.5 h-3.5 text-brand-400" />
+                  <span>Breed Database & Library</span>
+                </Link>
               </li>
               <li>
-                <button
-                  type="button"
-                  onClick={() => handleScroll('#about')}
-                  className="hover:text-brand-400 transition"
+                <a
+                  href="https://catscanner.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 hover:text-white transition text-purple-300/60"
                 >
-                  About PetVision AI
-                </button>
-              </li>
-              <li>
-                <button
-                  type="button"
-                  onClick={onScrollToUpload}
-                  className="text-brand-400 hover:text-brand-300 font-semibold transition"
-                >
-                  Identify My Pet
-                </button>
+                  <span>CatScanner.org Reference</span>
+                  <ExternalLink className="w-3 h-3" />
+                </a>
               </li>
             </ul>
           </div>
 
           {/* AI & Legal Disclaimer */}
           <div className="md:col-span-4 space-y-3">
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-200">
-              AI Terms & Veterinary Notice
+            <h4 className="text-xs font-bold uppercase tracking-wider text-purple-300">
+              Veterinary Notice & AI Terms
             </h4>
-            <p className="text-[11px] text-slate-500 leading-relaxed">
-              Breed predictions are algorithmic visual estimations powered by Google Gemini API.
-              Analyses are educational in nature and do not constitute veterinary medical diagnosis,
-              pedigree documentation, or formal lineage certification.
+            <p className="text-[11px] text-purple-200/60 leading-relaxed">
+              PetVision AI visual breed predictions are algorithmic estimates using morphological features.
+              They are designed for educational purposes and do not replace official pedigree registration or veterinary DNA testing.
             </p>
-            <p className="text-[11px] text-slate-500 leading-relaxed">
-              Image data sent to Google Gemini is processed under Google AI Studio terms. No image data
-              is stored in any persistent database by PetVision AI.
+            <p className="text-[11px] text-purple-200/50 leading-relaxed">
+              Uploaded images are processed directly in temporary buffer memory and are not stored in any permanent database.
             </p>
           </div>
         </div>
 
-        {/* Bottom Copyright */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-          <p>© {new Date().getFullYear()} PetVision AI. All rights reserved.</p>
+        {/* Bottom Bar */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-purple-300/50">
+          <p>© {new Date().getFullYear()} PetVision AI. Inspired by modern SaaS design & feline intelligence.</p>
           <p className="flex items-center gap-1.5">
-            Crafted for pet lovers everywhere
+            Designed for loving pet parents worldwide
           </p>
         </div>
       </div>

@@ -9,37 +9,30 @@
   }
 
   body {
-    @apply bg-slate-950 text-slate-100 antialiased selection:bg-brand-500/30 selection:text-brand-200 min-h-screen overflow-x-hidden;
+    @apply bg-themeDark-900 text-slate-100 antialiased selection:bg-brand-600/30 selection:text-brand-300 min-h-screen overflow-x-hidden;
   }
 }
 
-/* Luxury Grid & Dot Background */
-.bg-grid-pattern {
-  background-size: 36px 36px;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+/* MonkeyLinks style deep violet radial gradient */
+.bg-purple-radial {
+  background: radial-gradient(circle at 85% 20%, rgba(124, 58, 237, 0.35) 0%, rgba(12, 7, 34, 0.95) 60%, #080518 100%);
 }
 
-.bg-dot-pattern {
-  background-size: 24px 24px;
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+.bg-dot-purple {
+  background-size: 28px 28px;
+  background-image: radial-gradient(circle, rgba(167, 139, 250, 0.08) 1px, transparent 1px);
 }
 
-/* Glassmorphism Classes */
-.glass-panel {
-  background: rgba(15, 23, 42, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.glass-panel-elevated {
-  background: rgba(15, 23, 42, 0.85);
+/* Glass cards with subtle purple border */
+.glass-purple-card {
+  background: rgba(22, 14, 61, 0.7);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(139, 92, 246, 0.22);
+}
+
+.glass-purple-card:hover {
+  border-color: rgba(167, 139, 250, 0.4);
 }
 
 /* Custom scrollbar */
@@ -48,13 +41,13 @@
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #020617;
+  background: #080518;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #251963;
   border-radius: 9999px;
-  border: 2px solid #020617;
+  border: 2px solid #080518;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: #7c3aed;
 }
